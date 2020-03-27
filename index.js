@@ -1,39 +1,65 @@
 
-// Initialise custom environment variables (like Twilio account SIDs and authorisation tokens)
+// Initialise env and modules
 require('dotenv').config({path:'sendgrid.env'});
 var fs = require('fs');
-var notifHtml = fs.readFileSync(__dirname + '/static/notif-html.html', 'utf8');
-var notifTextOnly = fs.readFileSync(__dirname + '/static/notif.txt', 'utf8');
-var to_user = "";
+var express = require('express');
+var app = express();
+var http = require('http').createServer(app);
+const webport = process.env.PORT || 8080;
 
-console.log(process.env.SENDGRID_API_KEY);
-
-// using Twilio SendGrid's v3 Node.js Library
-// https://github.com/sendgrid/sendgrid-nodejs
+// Initialise SendGrid's API
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-const msg = {
-	to: to_user,
-	name: 'Shaunak Gadkari',
-	from: 'notification@covid-anonymous.shaunakg.me',
-	subject: 'Important! Someone you were in contact with recently tested positive to COVID-19',
-	text: notifTextOnly,
-	html: notifHtml,
-};
+// Read static email contents
+var notifHtml = fs.readFileSync(__dirname + '/static/notif-html.html', 'utf8');
+var notifTextOnly = fs.readFileSync(__dirname + '/static/notif.txt', 'utf8');
+var message;
 
-sgMail
-	.send(msg)
-	.then(() => {
-    	//Celebrate
-  	})
-  	.catch(error => {
-		//Log friendly error
-		console.error(error.toString());
+console.log(process.env.SENDGRID_API_KEY);
 
-		//Extract error msg
-		const {message, code, response} = error;
+app.use(express.static("static"));
 
-		//Extract response msg
-		const {headers, body} = response;
+app.get("/", function (req, res) {
+	res.sendFile(__dirname + '/static/index.html');
+});
+
+app.get("/api/notify", function (req, res) {
+
+	if (req.query.emails) {
+
+		var emails = req.query.emails.split(",");
+
+		const msg = {
+			to: emails,
+			from: 'notification@covid-anonymous.shaunakg.me',
+			subject: 'Important! Someone you were in contact with recently tested positive to COVID-19',
+			text: notifTextOnly,
+			html: notifHtml,
+		};
+
+		sgMail.send(msg).then(() => {
+			
+			res.redirect(200, "../../?status=send_ok_200");
+
+		}).catch(error => {
+
+			console.error(error.toString());
+			const {message, code, response} = error;
+			const {headers, body} = response;
+
+			res.redirect(500, "../../?status=ise_500");
+
+		});
+
+	} else {
+		
+		res.redirect(400, "../../?status=no_emails_400")
+
+	}
+
+});
+
+http.listen(webport, function(){
+    console.log('listening on *:' + webport);
 });
