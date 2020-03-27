@@ -40,7 +40,7 @@ app.get("/api/notify", function (req, res) {
 
 		sgMail.send(msg).then(() => {
 			
-			res.redirect(200, "../../?status=send_ok_200");
+			res.redirect("../../?status=send_ok_200");
 
 		}).catch(error => {
 
@@ -48,13 +48,13 @@ app.get("/api/notify", function (req, res) {
 			const {message, code, response} = error;
 			const {headers, body} = response;
 
-			res.redirect(500, "../../?status=ise_500");
+			res.redirect("../../?status=ise_500");
 
 		});
 
 	} else {
 		
-		res.redirect(400, "../../?status=no_emails_400")
+		res.redirect("../../?status=no_emails_400")
 
 	}
 
