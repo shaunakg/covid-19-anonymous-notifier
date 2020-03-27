@@ -1,0 +1,32 @@
+{
+  "name": "covid-19-anonymous-notifier",
+  "version": "1.0.0",
+  "description": "Notify people you've been in contact with if you've tested positive to COVID-19 (Coronavirus). All of the safety with none of the stigma.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaunakg/covid-19-anonymous-notifier.git"
+  },
+  "keywords": [
+    "covid-19",
+    "coronavirus",
+    "hackathon",
+    "covid-hackathon",
+    "covid-19-hackathon",
+    "hack-club"
+  ],
+  "author": "@shaunakg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shaunakg/covid-19-anonymous-notifier/issues"
+  },
+  "homepage": "https://github.com/shaunakg/covid-19-anonymous-notifier#readme",
+  "dependencies": {
+    "@sendgrid/mail": "^6.5.5",
+    "dotenv": "^8.2.0",
+    "twilio": "^3.41.1"
+  }
+}
