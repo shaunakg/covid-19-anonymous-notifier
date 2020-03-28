@@ -34,7 +34,9 @@ Issues/Bugs: https://github.com/shaunakg/covid-19-anonymous-notifier/issues
 	display: block;
 	text-align: center;
 }
-
+p{
+	font-size: 10;
+}	
 .box-desc-text{
 	color:rgb(58, 58, 58);	
 	font-size: 15px;
@@ -165,7 +167,7 @@ Issues/Bugs: https://github.com/shaunakg/covid-19-anonymous-notifier/issues
 	padding-bottom: 5px;
 	font-size: 15px;
 	color: white;
-	background: black;
+	background: rgba(85, 90, 89, 0.91);
 
 }
 
@@ -201,14 +203,19 @@ Issues/Bugs: https://github.com/shaunakg/covid-19-anonymous-notifier/issues
 	}
 
 	body{
-
-		background-image: url("img/bg-1.jpg");
-		opacity: 1;
+		background-image: url("img/bg-1.webp");
+		background-position: center;
+		background-origin: content-box;
+		background-repeat: no-repeat;
 		background-size: cover;
 		min-height:100vh;
 		font-family: 'Noto Sans', sans-serif;
 		overflow: hidden;
 
+	}
+	a{
+		font-size: 10;
+		text-decoration: none;
 	}
 
 }
@@ -217,7 +224,7 @@ Issues/Bugs: https://github.com/shaunakg/covid-19-anonymous-notifier/issues
 
 	body{
 
-		background-image: url("img/bg-1.jpg");
+		background-image: url("img/bg-1.webp");
 		background-position: center;
 		background-origin: content-box;
 		background-repeat: no-repeat;
@@ -228,6 +235,9 @@ Issues/Bugs: https://github.com/shaunakg/covid-19-anonymous-notifier/issues
 
 	}
 
+	a{
+		font-size: 10;
+	}
 	.box{
 		box-shadow: 10px 10px 75px -35px rgba(0,0,0,0.75);
 	}
