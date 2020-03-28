@@ -1,20 +1,45 @@
+
+<!-- 
+
+COVID-19 Anonymous Notifer (Index page)
+Repository: https://github.com/shaunakg/covid-19-anonymous-notifier
+Issues/Bugs: https://github.com/shaunakg/covid-19-anonymous-notifier/issues
+
+-->
+
 <!DOCTYPE html>
 
 <head>
 
-    <style>
+    <title>COVID-19 Anonymous Notifer | Let's be safe and private</title>
+    <link rel="stylesheet" href="stylesheet.css">
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-    </style>
+    <meta charset="utf-8">
+    <meta name="description" content="Notify people you've been in contact with if you've tested positive to COVID-19 (Coronavirus). All of the safety with none of the stigma.">
+    <meta name="keywords" content="Coronavirus,COVID-19,Health,Safety,Privacy,Anonymous,STD,STI,Disease,Infection,Endemic,Pandemic,Epidemic,2019,2020">
+    <meta name="author" content="Shaunak Gadkari">
+    <meta name="creator" content="Shaunak Gadkari">
+    <meta name="creator" content="Abinash Ram Sunthar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color" content="#485a78">
+    <meta name="color-scheme" content="only light">
 
 </head>
 
 <body>
 
+<form action="/api/notify" method="GET" class="input-wrapper">
+
+    <label for="emails">Email of recipients (seperate by commas)</label>
+    <input class="emails-input" name="emails" id="emails" placeholder="test1@example.com,test2@example.com">
+
+</form>
+
 <h1>Sorry, we're under development.</h1>
 <a href="https://github.com/shaunakg/covid-19-anonymous-notifier">Check out the repository on Github!</a>
+
+<p class="creds-footer">
+Created for the COVID-19 Global Hackathon 1.0 by @shaunakg and @abinash3366. Background image credit to Christopher Rusev on Unsplash.
+</p>
 
 </body>

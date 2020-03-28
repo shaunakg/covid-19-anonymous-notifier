@@ -1,4 +1,8 @@
 
+// COVID-19 Anonymous Notifer (NodeJS Server Program)
+// Repository: https://github.com/shaunakg/covid-19-anonymous-notifier
+// Issues/Bugs: https://github.com/shaunakg/covid-19-anonymous-notifier/issues
+
 // Initialise env and modules
 require('dotenv').config({path:'sendgrid.env'});
 var fs = require('fs');
