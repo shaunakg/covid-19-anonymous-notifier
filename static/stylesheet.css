@@ -23,7 +23,7 @@ Issues/Bugs: https://github.com/shaunakg/covid-19-anonymous-notifier/issues
 	transform: translate(-50%,-50%);
 	background-color: rgb(252, 246, 246);
 	border-radius:25px;
-	padding:70px 100px;
+	padding:70px 100px 20px 100px;
 }
 
 .box-title-text{
@@ -41,6 +41,16 @@ Issues/Bugs: https://github.com/shaunakg/covid-19-anonymous-notifier/issues
 	margin: -50px 0 20px 0;
 	display: block;
 	text-align: center;
+}
+
+.box .privacy-disclaimer {
+	font-size: 10px;
+	color: black;
+	opacity: 0.5;
+	width: 100%;
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 0;
 }
 
 .user-email {
