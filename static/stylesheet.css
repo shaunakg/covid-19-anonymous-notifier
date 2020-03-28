@@ -1,15 +1,80 @@
-
-/* 
-
-COVID-19 Anonymous Notifer (Stylesheet)
-Repository: https://github.com/shaunakg/covid-19-anonymous-notifier
-Issues/Bugs: https://github.com/shaunakg/covid-19-anonymous-notifier/issues
-
-*/
-
-body {
-
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&subset=greek-ext');
+*{
+    margin:0px;
+    padding:0px;
+}  
+body{
+	background-image: url("img1.jpg");
+	background-position: center;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+	min-height:100vh;
+	font-family: 'Noto Sans', sans-serif;
+}
+.middle-text{
+	color:#fff;	
+	text-transform:uppercase;
+    font-size: 23px;
+    margin: -50px 0 80px 0;
+    display: block;
+    text-align: center;
+}
+.text-idk{
+    color:rgb(163, 161, 161);	
+    font-size: 15px;
+    margin: -50px 0 80px 0;
+    display: block;
+    text-align: center;
+}
+.box{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+    background-color: rgba(44, 75, 71, 0.85);
+	border-radius:25px;
+	padding:70px 100px;
+}
+.input-container{
+	position:relative;
+	margin-bottom:25px;
+}
+.input-container label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:#fff;	
+    pointer-event:none;
+	transition: all 0.2s ease-in-out;
+}
+.input-container input{ 
+  border:0;
+  border-bottom:1px solid rgb(106, 240, 135);  
+  background:transparent;
+  width:100%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:#fff;
+}
+.lol{
+    align-items: center;
+    width: 25%;
+    background-color: rgb(250, 251, 250);   
+    color: #3cbb8a;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.lol:hover {
+    background-color: rgba(66, 99, 94, 0.91);
+}
+.input-container input:focus ~ label,
+.input-container input:valid ~ label{
+	top:-12px;
+	font-size:12px;
+	
 }
