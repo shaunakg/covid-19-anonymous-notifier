@@ -1,5 +1,7 @@
 
-// COVID-19 Anonymous Notifer (NodeJS Server Program)
+// COVID-19 Anonymous Notifer | NodeJS Server Program
+// Created for the COVID-19 Global Hackathon 1.0 by @shaunakg and @abinash3366
+// Hackathon: https://covid-global-hackathon.devpost.com/
 // Repository: https://github.com/shaunakg/covid-19-anonymous-notifier
 // Issues/Bugs: https://github.com/shaunakg/covid-19-anonymous-notifier/issues
 
