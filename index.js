@@ -18,7 +18,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 // Read static email contents
 var notifHtml = fs.readFileSync(__dirname + '/static/notif-html.html', 'utf8');
 var notifTextOnly = fs.readFileSync(__dirname + '/static/notif.txt', 'utf8');
-var processed_emails;
+var processed_emails = [];
 
 console.log(process.env.SENDGRID_API_KEY);
 
