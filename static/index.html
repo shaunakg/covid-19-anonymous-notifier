@@ -45,6 +45,7 @@
 
 const urlParams = new URLSearchParams(window.location.search);
 const status_code = urlParams.get('status') || null;
+var repeats, returned_emails;
 
 status_whole = document.getElementById('status-bar');
 status_text = document.getElementById('status-text');
@@ -62,9 +63,18 @@ if (status_code == null) {
     status_whole.style.top = "0";
     status_btn.style.marginTop = "0";
 
+} else if (status_code == "200_repeat_email") {
+
+    repeats = urlParams.get('repeats').split(",");
+
+    status_text.innerHTML = "Your emails were sent successfully, except " + repeats.length + " which were repeats in our database:<br>" + repeats.join("<br>");
+    status_whole.style.backgroundColor = "rgb(0, 165, 0)";
+    status_whole.style.top = "0";
+    status_btn.style.marginTop = "0";
+
 } else if (status_code == "400_email_send_err") {
 
-    var returned_emails = urlParams.get('emails').split(",") || null;
+    returned_emails = urlParams.get('emails').split(",") || null;
 
     status_text.innerHTML = "Sorry, there was an error with one or more emails:<br>" + returned_emails.join("<br>");
     status_whole.style.backgroundColor = "rgb(255, 60, 60)";
@@ -124,8 +134,12 @@ e_in.onkeydown = function (e) {
 };
 
 emails_form.onsubmit = function (e) {
-    all_emails.push(e_in.value);
-    hidden_emails.value = all_emails.join(",");
+
+    if (e_in.value != "") {
+        all_emails.push(e_in.value);
+        hidden_emails.value = all_emails.join(",");
+    }
+
 }
 
 </script>

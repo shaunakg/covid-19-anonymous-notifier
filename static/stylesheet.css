@@ -108,6 +108,7 @@
 	width: 100%;
 	background-color: rgb(0, 165, 0);
 	padding: 40px;
+	word-wrap: break-word;
 	text-align: center;
 
 	transition: 0.5s;
@@ -158,21 +159,26 @@
     }
 
     .box-title-text {
-		margin: 40% 0 80px 0;
-		
+		margin: 40% 0 80px 0;		
 	}
+
 	body{
-		background-color: rgb(252, 246, 246);
+
+		background-image: url("img/bg-1.jpg");
+		opacity: 1;
 		background-size: cover;
 		min-height:100vh;
 		font-family: 'Noto Sans', sans-serif;
 		overflow: hidden;
+
 	}
 
 }
 
 @media only screen and (min-width: 901px) {
+
 	body{
+
 		background-image: url("img/bg-1.jpg");
 		background-position: center;
 		background-origin: content-box;
@@ -181,8 +187,11 @@
 		min-height:100vh;
 		font-family: 'Noto Sans', sans-serif;
 		overflow: hidden;
+
 	}
+
 	.box{
 		box-shadow: 10px 10px 75px -35px rgba(0,0,0,0.75);
 	}
+
 }

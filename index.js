@@ -18,7 +18,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 // Read static email contents
 var notifHtml = fs.readFileSync(__dirname + '/static/notif-html.html', 'utf8');
 var notifTextOnly = fs.readFileSync(__dirname + '/static/notif.txt', 'utf8');
-var message;
+var processed_emails;
 
 console.log(process.env.SENDGRID_API_KEY);
 
@@ -36,11 +36,21 @@ app.get("/api/testing", function (req, res) {
 
 app.get("/api/notify", function (req, res) {
 
-	console.log(req.query.emails);
-
 	if (req.query.emails) {
 
 		var emails = req.query.emails.split(",");
+		var repeat_emails = [];
+
+		for (i = 0; i < emails.length; i++) {
+			if (processed_emails.includes(emails[i]) && emails[i] != "test@example.com") {
+				repeat_emails.push(emails.splice(i, 1));
+			} else {
+				processed_emails.push(i)
+			}
+		}
+
+		console.log("Processing emails: " + emails);
+		console.log("Excluding repeats: "+ repeat_emails);
 
 		const msg = {
 			to: emails,
@@ -51,8 +61,12 @@ app.get("/api/notify", function (req, res) {
 		};
 
 		sgMail.sendMultiple(msg).then(() => {
-			
-			res.redirect("../../?status=200_send_ok&emails=" + emails.join());
+
+			if (repeat_emails.length > 0) {
+				res.redirect("../../?status=200_repeat_emails&emails=" + emails.join() + "&repeats=" + repeat_emails.join());
+			} else {
+				res.redirect("../../?status=200_send_ok&emails=" + emails.join());
+			}
 
 		}).catch(error => {
 
