@@ -32,7 +32,7 @@ app.get("/api/notify", function (req, res) {
 
 	if (req.query.emails) {
 
-		var emails = req.query.emails.split(",");
+		var emails = req.query.emails.replace("%40", "@").split("%2C");
 
 		const msg = {
 			to: emails,
