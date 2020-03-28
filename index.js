@@ -30,9 +30,11 @@ app.get("/", function (req, res) {
 
 app.get("/api/notify", function (req, res) {
 
+	console.log(req.query.emails);
+
 	if (req.query.emails) {
 
-		var emails = req.query.emails.replace("%40", "@").split("%2C");
+		var emails = req.query.emails.split(",");
 
 		const msg = {
 			to: emails,
@@ -42,7 +44,7 @@ app.get("/api/notify", function (req, res) {
 			html: notifHtml,
 		};
 
-		sgMail.send(msg).then(() => {
+		sgMail.sendMultiple(msg).then(() => {
 			
 			res.redirect("../../?status=send_ok_200");
 

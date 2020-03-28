@@ -102,9 +102,8 @@ body{
     background-color: rgba(66, 99, 94, 0.91);
 }
 
-.input-container input:focus ~ label,
-.input-container input:valid ~ label{
+.input-container input:focus ~ label, .input-container input:valid ~ label{
 	top:-12px;
 	font-size:12px;
-	
 }
+

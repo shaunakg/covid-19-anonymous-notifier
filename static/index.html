@@ -20,7 +20,7 @@
 
 <div class="box">
 
-    <form method="GET" action="/api/notify">
+    <form method="GET" action="/api/dummy">
         <span class="box-title-text">COVID-19 Anonymous Reporting Tool</span>
         <span class="box-desc-text">Notify people you've been in contact with if you've tested positive to COVID-19 (Coronavirus).</span>
         <span id="emails-container" class="emails-container"></span>
@@ -62,7 +62,7 @@ e_in.onkeydown = function (e) {
     if (this.value == "") {
 
         var key = event.keyCode || event.charCode;
-        if( key == 8 ) {
+        if( key == 8 && all_emails.length > 0) {
             this.value = all_emails[all_emails.length - 1];
             all_emails.pop();
             // var last_email = all_emails.pop();
