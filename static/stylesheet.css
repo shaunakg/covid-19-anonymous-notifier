@@ -1,18 +1,19 @@
 
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&subset=greek-ext');
 *{
-    margin:0px;
-    padding:0px;
+	margin:0px;
+	padding:0px;
 } 
 
 body{
 	background-image: url("img/bg-1.jpg");
 	background-position: center;
-    background-origin: content-box;
-    background-repeat: no-repeat;
-    background-size: cover;
+	background-origin: content-box;
+	background-repeat: no-repeat;
+	background-size: cover;
 	min-height:100vh;
 	font-family: 'Noto Sans', sans-serif;
+	overflow: hidden;
 }
 
 .box{
@@ -20,44 +21,44 @@ body{
 	left:50%;
 	top:50%;
 	transform: translate(-50%,-50%);
-    background-color: rgb(252, 246, 246);
+	background-color: rgb(252, 246, 246);
 	border-radius:25px;
-    padding:70px 100px;
-    box-shadow: 10px 10px 75px -35px rgba(0,0,0,0.75);
+	padding:70px 100px;
+	box-shadow: 10px 10px 75px -35px rgba(0,0,0,0.75);
 }
 
 .box-title-text{
 	color:rgb(58, 58, 58);	
 	text-transform:uppercase;
-    font-size: 23px;
-    margin: -50px 0 80px 0;
-    display: block;
-    text-align: center;
+	font-size: 23px;
+	margin: -50px 0 80px 0;
+	display: block;
+	text-align: center;
 }
 
 .box-desc-text{
-    color:rgb(58, 58, 58);	
-    font-size: 15px;
-    margin: -50px 0 20px 0;
-    display: block;
-    text-align: center;
+	color:rgb(58, 58, 58);	
+	font-size: 15px;
+	margin: -50px 0 20px 0;
+	display: block;
+	text-align: center;
 }
 
 .user-email {
-    padding: 5px;
-    font-size: 1em;
-    margin: 0 5px 0 5px;
-    background-color: rgba(0, 136, 255, 0.349);
-    border-radius: 3px;
+	padding: 5px;
+	font-size: 1em;
+	margin: 0 5px 0 5px;
+	background-color: rgba(0, 136, 255, 0.349);
+	border-radius: 3px;
 }
 
 .emails-container {
-    text-align: center;
+	text-align: center;
 }
 
 .input-container{
-    position:relative;
-    margin-top: 25px;
+	position:relative;
+	margin-top: 25px;
 	margin-bottom:25px;
 }
 
@@ -67,43 +68,75 @@ body{
 	left:0px;
 	font-size:16px;
 	color: rgb(58, 58, 58);	
-    pointer-events:none;
+	pointer-events:none;
 	transition: all 0.2s ease-in-out;
 }
 
 .input-container input{ 
-  border:0;
-  border-bottom:1px solid rgb(106, 240, 135);  
-  background:transparent;
-  width:100%;
-  padding:8px 0 5px 0;
-  font-size:16px;
-  color: rgb(58, 58, 58);
+	border:0;
+	border-bottom:1px solid rgb(106, 240, 135);	
+	background:transparent;
+	width:100%;
+	padding:8px 0 5px 0;
+	font-size:16px;
+	color: rgb(58, 58, 58);
 }
 
 .input-container input:focus {
-    outline: none;
-    border-bottom:1px solid rgb(95, 62, 0);
+	outline: none;
+	border-bottom:1px solid rgb(95, 62, 0);
 }
 
 .submit-btn{
-    align-items: center;
-    width: 35%;
-    background-color: rgb(0, 7, 0);   
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 6px;
+	align-items: center;
+	width: 35%;
+	background-color: rgb(0, 7, 0);	 
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 6px;
     cursor: pointer;
+    transition: 0.25s;
 }
 
 .submit-btn:hover {
-    background-color: rgba(66, 99, 94, 0.91);
+    background-color: rgba(85, 90, 89, 0.91);
+    box-shadow: inset 10px 10px 43px -15px rgba(0,0,0,0.75);
+    transition: 0.25s;
 }
 
 .input-container input:focus ~ label, .input-container input:valid ~ label{
 	top:-12px;
 	font-size:12px;
+}
+
+@media only screen and (max-width: 900px) {
+
+	body {
+        overflow: hidden;
+        font-size: 12px;
+    }
+
+    .box {
+        left: 4%;
+        right: 0;
+        max-width: 78%;
+        margin: 0;
+        transform: none;
+
+        padding: 0;
+        padding-left: 7%;
+        padding-right: 7%;
+
+        top: 15%;
+        bottom: 15%;
+        min-height: 70%;
+    }
+
+    .box-title-text {
+        margin: 40% 0 80px 0;
+    }
+
 }
 

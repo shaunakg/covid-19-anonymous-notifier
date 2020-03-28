@@ -28,6 +28,12 @@ app.get("/", function (req, res) {
 	res.sendFile(__dirname + '/static/index.html');
 });
 
+app.get("/api/testing", function (req, res) {
+
+	res.send(req.query);
+
+});
+
 app.get("/api/notify", function (req, res) {
 
 	console.log(req.query.emails);
