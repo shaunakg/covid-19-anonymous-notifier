@@ -54,7 +54,12 @@ p{
 	margin-top: 50px;
 	margin-bottom: 0;
 }
-
+.box-foot-text{
+	color:rgb(43, 43, 43);	
+	font-size: 10px;
+	display: block;
+	text-align: center;
+}
 .user-email {
 	padding: 5px;
 	font-size: 1em;
