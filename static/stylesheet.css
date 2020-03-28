@@ -50,6 +50,8 @@ body{
 	margin: 0 5px 0 5px;
 	background-color: rgba(0, 136, 255, 0.349);
 	border-radius: 3px;
+	user-select: none;
+	cursor: pointer;
 }
 
 .emails-container {
@@ -109,6 +111,38 @@ body{
 .input-container input:focus ~ label, .input-container input:valid ~ label{
 	top:-12px;
 	font-size:12px;
+}
+
+.status-message {
+	position: fixed;
+	top: -15%;
+	width: 100%;
+	background-color: rgb(0, 165, 0);
+	padding: 40px;
+	text-align: center;
+
+	transition: 0.5s;
+}
+
+.status-message .msg {
+	color: white;
+	font-size: 1em;
+}
+
+.status-message .go-away {
+
+	cursor: pointer;
+	user-select: none;
+
+	font-size: 1.5em;
+	position: fixed;
+	right: 3%;
+	top: 3%;
+
+	margin-top: -15%;
+
+	transition: 0.5s;
+
 }
 
 @media only screen and (max-width: 900px) {

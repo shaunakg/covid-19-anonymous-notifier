@@ -52,7 +52,7 @@ app.get("/api/notify", function (req, res) {
 
 		sgMail.sendMultiple(msg).then(() => {
 			
-			res.redirect("../../?status=send_ok_200");
+			res.redirect("../../?status=200_send_ok&emails=" + emails.join());
 
 		}).catch(error => {
 
@@ -60,13 +60,13 @@ app.get("/api/notify", function (req, res) {
 			const {message, code, response} = error;
 			const {headers, body} = response;
 
-			res.redirect("../../?status=ise_500");
+			res.redirect("../../?status=400_email_send_err&emails=" + emails.join());
 
 		});
 
 	} else {
 		
-		res.redirect("../../?status=no_emails_400")
+		res.redirect("../../?status=400_wrong_params&emails=" + emails.join())
 
 	}
 
