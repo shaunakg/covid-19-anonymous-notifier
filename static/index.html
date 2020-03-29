@@ -46,8 +46,7 @@ Issues/Bugs: https://github.com/shaunakg/covid-19-anonymous-notifier/issues
             <input type="hidden" id="hidden-emails" name="emails" required>
             <label>Email of recipients (comma after each)</label>
         </div>
-        <center><button type="submit" class="submit-btn">Send email to recipients</button></center>
-	<span class="box-foot-text">Want To know more About this Project Goto <a href="indexau.html">About Us</a></span>
+        <center><button type="submit" class="submit-btn">Send email to recipients</button> <button class="submit-btn green-btn" onclick="window.location.href = 'about-us/';return false;">Learn more</button> </center>
     </form>	
 
     <p class="privacy-disclaimer">Data is not stored, except for logging purposes. For further questions, <a href="https://github.com/shaunakg/covid-19-anonymous-notifier/issues">open an issue on Github.</a></p>
@@ -77,8 +76,8 @@ status_btn = document.getElementById('status-go-away');
 
 if (status_code == null) {
 
-    status_whole.style.top = "-15%";
-    status_btn.style.marginTop = "-15%";
+    status_whole.style.top = "-50%";
+    status_btn.style.marginTop = "-50%";
 
 } else if (status_code == "200_send_ok") {
 
@@ -115,8 +114,8 @@ if (status_code == null) {
 }
 
 status_btn.onclick = function () {
-    status_whole.style.top = "-15%";
-    status_btn.style.marginTop = "-15%";
+    status_whole.style.top = "-50%";
+    status_btn.style.marginTop = "-50%";
 }
 
 var e_in = document.getElementById("emails-input");

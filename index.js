@@ -26,10 +26,6 @@ console.log(process.env.SENDGRID_API_KEY);
 
 app.use(express.static("static"));
 
-app.get("/", function (req, res) {
-	res.sendFile(__dirname + '/static/index.html');
-});
-
 app.get("/api/testing", function (req, res) {
 
 	res.send(req.query);
