@@ -163,6 +163,15 @@ emails_form.onsubmit = function (e) {
         hidden_emails.value = all_emails.join(",");
     }
 
+    if (all_emails == "") {
+        status_text.innerHTML = "Please enter an email before submitting.";
+        status_whole.style.backgroundColor = "rgb(255, 60, 60)";
+        status_whole.style.top = "0";
+        status_btn.style.marginTop = "0";
+
+        return false;
+    }
+
 }
 
 </script>
