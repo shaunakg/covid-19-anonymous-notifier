@@ -4,6 +4,6 @@ What happens now?
 - It is recommended that you call or email a doctor to inquire about COVID-19 testing
 - Don't go into enclosed spaces with over 10 people to prevent spread of the virus.
 - Read online about self-isolation and quarantine techniques
-- If you are tested postive, you can inform people anonymously (like this) using our tool at covid-anonymous.shaunakg.me
+- If you are tested postive, you can inform people anonymously (like this) using our tool at https://covid-anonymous.herokuapp.com
 
 This notifier was created for the COVID-19 Global Hackathon 1.0 by teenagers. Always get the advice of a medical professional. This mailbox isn't monitored, direct replies to gadkari.shaunak@gmail.com.
