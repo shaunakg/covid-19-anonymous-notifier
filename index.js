@@ -34,7 +34,7 @@ app.get("/api/testing", function (req, res) {
 
 app.get("/api/notify", function (req, res) {
 
-	if (req.query.emails) {
+	if (req.query.emails && req.query.emails.length > 0) {
 
 		var emails = req.query.emails.split(",");
 		var repeat_emails = [];
@@ -52,7 +52,7 @@ app.get("/api/notify", function (req, res) {
 
 		const msg = {
 			to: emails,
-			from: 'notification@covid-anonymous.shaunakg.me',
+			from: 'notification@covid-anonymous.shaunak.io',
 			subject: 'Important! Someone you were in contact with recently tested positive to COVID-19',
 			text: notifTextOnly,
 			html: notifHtml,
@@ -72,13 +72,15 @@ app.get("/api/notify", function (req, res) {
 			const {message, code, response} = error;
 			const {headers, body} = response;
 
-			res.redirect("../../?status=400_email_send_err&emails=" + emails.join());
+			try {
+				res.redirect("../../?status=400_email_send_err&emails=" + emails.join());
+			} catch(e) {res.redirect("../../?status=400_email_send_err");}
 
 		});
 
 	} else {
 		
-		res.redirect("../../?status=400_wrong_params&emails=" + emails.join())
+		res.redirect("../../?status=400_wrong_params")
 
 	}
 
